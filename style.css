@@ -1,0 +1,122 @@
+:root {
+    --clr-primary: hsl(47, 88%, 63%);
+    --clr-neutral-400: hsl(0, 0%, 100%);
+    --clr-neutral-600: hsl(0, 0%, 50%);
+    --clr-neutral-800: hsl(0, 0%, 7%);
+
+    --fs-400: 1rem;
+    --ff: 'Figtree', sans-serif;
+    --fw-800: 800;
+    --fw-400: 400;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    background-color: var(--clr-primary);
+    font-family: var(--ff);
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-800);
+    font-weight: var(--fw-400);
+}
+
+section {
+    margin-block: 10rem;
+    padding-inline: 2rem;
+    max-width: 1440px;
+}
+
+container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 28rem;
+    background-color: var(--clr-neutral-400);
+    border: 1px solid var(--clr-neutral-800);
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: .5rem .5rem var(--clr-neutral-800);
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    padding-block: 1rem;
+    gap:.5rem;
+
+    & > h1 {
+        font-size: clamp(1.25rem, 0.469vw + 1.074rem, 1.75rem);
+        margin-block: .5rem;
+    }
+
+    & > h1:hover,
+    & > h1:focus {
+        cursor: pointer ;
+        color: var(--clr-primary);
+    }
+
+    & > p {
+        color: var(--clr-neutral-600);
+        line-height: 1.5;
+        font-size: clamp(0.8rem, 0.423vw + 0.642rem, 1.25rem);
+        margin-block-end: .5rem;
+    }
+}
+
+.card__meta {
+    display: flex;
+    flex-direction: column;
+    order: -1;
+    gap: .75rem;
+
+    & > p {
+        width: max-content;
+        background-color: var(--clr-primary);
+        padding: .5em 1em;
+        border-radius: .25rem;
+        font-size: calc(var(--fs-400) / 1.2);
+        font-weight: var(--fw-800);
+    }
+
+    & > date {
+        font-size: calc(var(--fs-400) / 1.1);
+    }
+}
+
+.card__media-wrapper {
+    display: flex;
+    width: 100%;
+    order: -1;
+    border-radius: .5rem;
+    overflow: hidden;
+
+    & > img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.card__avatar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    
+    & > p {
+        font-weight: var(--fw-800);
+    }
+
+    & > img {
+        width: 2.5rem;
+        aspect-ratio: 1;
+    }
+}
